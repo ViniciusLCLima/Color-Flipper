@@ -1,0 +1,245 @@
+/* Variáveis */
+:root {
+	--bgColorHue: 180;
+	--bgColorSaturation: 50%;
+	--bgColorLightness: 50%;
+	--bgColor: hsl(var(--bgColorHue),var(--bgColorSaturation),var(--bgColorLightness));
+	--contrastingColorHue: 0;
+	--contrastingColorSaturation: 50%;
+	--contrastingColorLightness: 50%;
+	--contrastingColor:hsl(var(--contrastingColorHue),var(--contrastingColorSaturation),var(--contrastingColorLightness));
+	--accentColorHue: 0;
+	--accentColorSaturation: 50%;
+	--accentColorLightness: 50%;
+	--accentColor: hsl(var(--accentColorHue),var(--accentColorSaturation),var(--accentColorLightness));
+	--shadowLightness: ;
+	--onHoverContrastColorLightness: ;
+	--onHoverContrastColor: hsl(var(--contrastingColorHue),var(--contrastingColorSaturation),var(--onHoverContrastColorLightness));
+}
+/* Reset */
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Overpass&family=Permanent+Marker&display=swap');
+/* Estilos básicos */
+
+*{
+	font-family: 'overpass', sans-serif;
+}
+
+section *,
+body,
+section button,
+.presentation.msg,
+.picture-div{
+	transition: background 0.9s, color 0.9s, border-color 0.9s;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	height: calc(100vh - 30px);
+	background-color: var(--bgColor);
+}
+
+.main-header{
+	background-color: white;
+}
+
+.picture-div{
+	border: 2px solid var(--bgColor);
+}
+
+h1 {
+	font-size: 1.5rem;
+}
+
+.main-header {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	border: solid hsl(var(--accentColorHue), 20%,var(--accentColorLightness));
+	border-width: 0px 0px 3px 0px;
+	font-family: 'Permanent Marker', cursive;
+}
+
+h2 {
+	margin-bottom: calc(12px + 4%);
+	font-size: 1.5rem;
+	padding: 15px 0px;
+	background-color: hsl(var(--contrastingColorHue),var(--contrastingColorSaturation),var(--contrastingColorLightness), 0.8);
+	color: var(--bgColor);
+}
+
+.main-div {
+	margin: 0px 7px;
+	text-align: center;
+	width: 100%;
+}
+
+.btns-div {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.btns-div *{
+	box-sizing: border-box;
+}
+
+.main-btn-div{
+	flex: 1 1;
+	min-height: 60px;
+	max-width: 200px;
+	margin: 0px 5%;
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	transition: 0.5s
+}
+
+.main-btn-div.open{
+	max-width: 400px;
+}
+
+.main-btn{
+	height: 100%;
+	width: 100%;
+	padding: 8px;
+}
+
+.random-btn-div.closed{
+	overflow: hidden;
+    flex-grow: 0;
+    margin: 0px;
+}
+
+section button {
+	font-weight: bold;
+	border-radius: 0%;
+	font-size: 1.25rem;
+	cursor: pointer;
+	transition: transform 0.5s, letter-spacing 0.5s, background-color 0.9s, color 0.9s, border-color 0.9s, box-shadow 0.3s;
+	box-shadow: 0px 0px 20px hsl(0, 0%, var(--shadowLightness), 0.5);
+	border: 2px solid var(--accentColor);
+	background-color: var(--contrastingColor);
+	color: var(--bgColor);
+}
+
+.number-input-div input{
+	margin-right: 8px;
+    width: 3rem;
+}
+
+.number-input-div{
+	position: absolute;
+    overflow: hidden;
+    border: 2px solid var(--accentColor);
+    background-color: var(--contrastingColor);
+    color: var(--bgColor);
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 9px;
+	transition: 0.9s;
+	width: 50%;
+}
+
+.number-input-div.closed{
+	width: 0%;
+	height:0%;
+    border: 0px;
+    padding: 0px;
+}
+
+.number-input-div button{
+	font-size: 1rem;
+}
+
+.input-and-ok-div{
+	margin-top: 5px;
+}
+
+.input-and-ok-div span{
+	display: block;
+	font-size: 0.2rem;
+	color: var(--accentColor);
+	margin-top: 2px;
+	-webkit-text-stroke: var(--bgColor);
+    -webkit-text-stroke-width: 0.3px;
+}
+
+section button:hover{
+	letter-spacing: 0.02rem;
+	box-shadow: 0px 0px 30px hsl(0, 0%, var(--shadowLightness), 0.5);
+	background: var(--onHoverContrastColor);
+}
+
+section button:active{
+	transition: background-color 0.9s, color 0.9s, border-color 0.9s, box-shadow 0.1s;
+	letter-spacing: 0rem;
+	box-shadow: 0px 0px 20px hsl(0, 0%, var(--shadowLightness), 0.5);
+	background-color: var(--contrastingColor);
+}
+
+.presentation.msg{
+	box-shadow: 6px 6px 9px hsl(0, 0%, var(--shadowLightness), 0.5);
+	transition: box-shadow 0.9s, background-color 0.5s;
+}
+
+.presentation.picture-div{
+	box-shadow: 6px 6px 9px hsl(0, 0%, var(--shadowLightness), 0.5);
+	transition: box-shadow 0.9s, border-color 0.9s;
+}
+
+.title {
+	padding: 15px 60px;
+	flex-grow: 1;
+}
+
+.colorful-header-box {
+	flex-grow: 2;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - 80px);
+}
+
+.greetings{
+	position: absolute;
+    margin: auto;
+    text-align: center;
+    background-color: var(--accentColor);
+    font-weight: bold;
+    padding: 9px 9px;
+    border: 2px solid;
+    transition: 2s 0.5s;
+	animation: blink infinite 5, vanish 2s;
+}
+
+@keyframes blink{
+	0%{
+		border-color: var(--accentColor);
+		color: var(--bgColor);
+	}
+	100%{
+		border-color: var(--onHoverContrastColor);
+		color: var(--contrastingColor);
+	}
+}
+
+@keyframes vanish{
+	0%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
