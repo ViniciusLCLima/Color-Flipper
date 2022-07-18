@@ -88,7 +88,7 @@ const getAccentHslAsArrayFromHslAsArray = (hslArray)=>{
     } else{
         hue -= 90
     }
-    saturation = 60;
+    saturation = 65;
     if (lightness<=50) {
         if(lightness<=30){
             lightness+= 35} 
@@ -189,6 +189,18 @@ const removeSpansFromInputDivs = () =>{
     removeSpanFromElement(luminanceInputDiv);
 }
 
+const displayThereYouGoMessage = () =>{
+    const greetingsDiv = document.createElement('div');
+    const greetingsMsgElement = document.createElement('strong');
+    const greetingsMsg = 'There you go!';
+    const mainSection = document.querySelector('section');
+    greetingsDiv.classList.add('greetings')
+    greetingsDiv.appendChild(greetingsMsgElement);
+    greetingsMsgElement.textContent = greetingsMsg;
+    mainSection.appendChild(greetingsDiv);
+    setTimeout(()=>{greetingsDiv.remove()}, 3000);
+}
+
 //Getting elements
 const hueInputDiv = document.querySelector('.hue-input-div');
 const hueInputAndOkDiv = document.querySelector('.hue-input-div .input-and-ok-div');
@@ -276,7 +288,8 @@ const confirmLuminance = () => {
         closeInputs();
         changeColor(chosenColor);
         setInputDivsHeight(choiceDivHeight);
-        removeSpansFromInputDivs()
+        removeSpansFromInputDivs();
+        displayThereYouGoMessage();
     }else{
         displayInvalidInputMessage(luminanceInputDiv, luminanceInputAndOkDiv,luminanceNumberInput, 0, 100);
     }

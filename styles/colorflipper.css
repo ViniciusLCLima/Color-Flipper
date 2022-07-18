@@ -212,34 +212,42 @@ section {
 	height: calc(100vh - 80px);
 }
 
+@keyframes blink{
+	0%,40%,100%{
+		border-color: var(--bgColor);
+		color: var(--bgColor);
+	}
+	60%, 80%{
+		border-color: var(--contrastingColor);
+		color: var(--contrastingColor);
+	}
+}
+
+@keyframes disappear{
+	0%{
+		opacity: 1;
+	}
+	60%{
+		opacity: 1
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
 .greetings{
 	position: absolute;
     margin: auto;
     text-align: center;
     background-color: var(--accentColor);
     font-weight: bold;
+	font-size: 1rem;
     padding: 9px 9px;
     border: 2px solid;
-    transition: 2s 0.5s;
-	animation: blink infinite 5, vanish 2s;
-}
-
-@keyframes blink{
-	0%{
-		border-color: var(--accentColor);
-		color: var(--bgColor);
-	}
-	100%{
-		border-color: var(--onHoverContrastColor);
-		color: var(--contrastingColor);
-	}
-}
-
-@keyframes vanish{
-	0%{
-		opacity: 1;
-	}
-	100%{
-		opacity: 0;
-	}
+	animation: blink 1s linear 0s 5 normal, disappear 3s linear 0s 1 normal;
+	-webkit-animation: blink 1s linear 0s 5 normal, disappear 3s linear 0s 1 normal;
+	border-color: var(--contrastingColor);
+	color: var(--contrastingColor);
+	opacity: 0;
+	box-shadow: 50px hsl(0, 0, var(--shadowLightness));
 }

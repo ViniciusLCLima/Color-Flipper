@@ -3,6 +3,10 @@ const getElementHeight = (elementQS) => {
 	const ELEMENT = document.querySelector(elementQS);
 	return ELEMENT.offsetHeight;
 };
+const getElementWidth = (elementQS) => {
+	const element = document.querySelector(elementQS);
+	return element.offsetWidth;
+}
 
 const addClassToElement = (elementQS, newClass) => {
 	const element = document.querySelector(elementQS);
@@ -98,6 +102,7 @@ const projectsOptionSpan = document.querySelector(PROJECTS_OPTION_SPAN_QS);
 
 projectsOptionSpan.addEventListener('click', () => {
 	if (!projectsOptionArrow.classList.contains('open')) {
+		projectsDiv.classList.add('open');
 		projectsDiv.style.height = `${getElementHeight(OPTIONS_UL_QS)}px`;
 		projectsDiv.style.borderWidth = '2px';
 		addClassToElement(PROJECTS_OPTION_ARROW_QS, 'open');
@@ -106,10 +111,11 @@ projectsOptionSpan.addEventListener('click', () => {
 
 projectsOptionArrow.addEventListener('click', () => {
 	if (projectsOptionArrow.classList.contains('open')) {
+		projectsDiv.classList.add('open');
 		removeClassFromElement(PROJECTS_OPTION_ARROW_QS, 'open');
 		projectsDiv.style.height = '0px';
 		setTimeout(() => {
-			projectsDiv.style.borderTopWidth = '0px';
+			projectsDiv.style.borderWidth = '0px';
 		}, 400);
 	} else {
 		projectsDiv.style.height = `${getElementHeight(OPTIONS_UL_QS)}px`;
