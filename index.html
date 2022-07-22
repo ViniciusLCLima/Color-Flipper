@@ -21,7 +21,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" >
 	</head>
 	<body>
-		<script src="js/colorflipper.js" defer>
+		<script type="module" src="./js/random-btn-setting.js" defer>
+		</script>
+		<script type="module" src="./js/input-validation-and-manipulation.js" defer>
 		</script>
 		<header class="main-header">
 			<h1 class="title">Color Flipper</h1>
@@ -34,10 +36,10 @@
 				</h2>
 				<div class="btns-div">
 					<div class="main-btn-div random-btn-div">
-					<button type="button" class="random-btn main-btn">Get random color</button>
+					<button tabindex="1" type="button" class="random-btn main-btn">Get random color</button>
 					</div>
 					<div class="main-btn-div choice-btn-div">
-						<button type="button" class="choice-btn main-btn">Choose it with hsl values
+						<button tabindex="2" type="button" class="choice-btn main-btn">Choose it with hsl values
 						</button>
 						<div class="number-input-div hue-input-div closed"><label for="hueInput">Hue (should be a number between 0 and 360):</label><div class="input-and-ok-div"><input type="number" min="0" max="360" maxlength="3" id="hueInput" placeholder="Eg: 0, 40, 360"/><button type="button" class="hue-confirm ok-btn">Ok</button></div></div>
 						<div class="number-input-div saturation-input-div closed"><label for="saturationInput">Saturation (enter a number from 0 to 100):</label><div class="input-and-ok-div"><input type="number" min="0" max="100" maxlength="3" id="saturationInput" placeholder="Eg: 0, 45, 100"/><button type="button" class="saturation-confirm ok-btn">Ok</button></div></div>
@@ -46,18 +48,18 @@
 				</div>
 			</div>
 		</section>
-		<div class="presentation-sticker">
-			<div class="presentation msg">More on me and my work</div>
-			<div class="picture-div presentation">
+		<div class="presentation presentation-sticker">
+			<button tabindex="40" class="presentation msg">More on me and my work</button>
+			<button tabindex="41" class="picture-div presentation">
 				<img
 					src="https://avatars.githubusercontent.com/ViniciusLeitedoCarmo"
 					alt="A profile and professional picture of me, Vinícius Leite. I'am with a formal and white shirt."
 					class="picture presentation"
 				/>
-			</div>
+			</button>
 		</div>
 		<div class="presentation-menu presentation closed">
-			<button class="close-btn"></button>
+			<button tabindex="47" class="close-btn"></button>
 			<div class="header">
 				<img
 					src="https://avatars.githubusercontent.com/ViniciusLeitedoCarmo"
@@ -71,7 +73,7 @@
 			<div class="options-div">
 				<ul>
 					<li class="presentation-option">
-						<a
+						<a tabindex="42"
 							href="https://www.linkedin.com/in/vinicius-leite-b879111b4"
 							target="_blank"
 							><span>Get to my LinkedIn</span>
@@ -79,18 +81,18 @@
 						></a>
 					</li>
 					<li class="presentation-option">
-						<a href="https://github.com/ViniciusLeitedoCarmo" target="_blank"
+						<a tabindex="43" href="https://github.com/ViniciusLeitedoCarmo" target="_blank"
 							><span>Get to my GitHub</span>
 							<div class="option-arrow"></div
 						></a>
 					</li>
 					<li class="presentation-option projects">
-						<span>More projects</span>
-						<div class="option-arrow projects-arrow"></div>
+						<button tabindex="44" type="button" class="projects-option-btn"><span>More projects</span></button>
+						<button tabindex="55" type="button" class="option-arrow projects-arrow"></button>
 						<div class="options-div projects">
 							<ul>
 								<li class="presentation-option projects-option">
-									<a href="">Color Flipper</a>
+									<a tabindex="56" href="">Color Flipper</a>
 								</li>
 							</ul>
 						</div>
@@ -104,6 +106,8 @@
 				like it.
 			</p>
 		</footer>
-		<script src="js/mypresentation.js" defer></script>
+		<script type="module" src="./js/mypresentation/open-close-projects.js" defer></script>
+		<script type="module" src="./js/mypresentation/uniforming-hover-effect.js" defer></script>
+		<script type="module" src="./js/mypresentation/open-close-menu.js" defer></script>
 	</body>
 </html>

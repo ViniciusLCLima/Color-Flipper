@@ -1,4 +1,4 @@
-/* variáveis */
+/* variables */
 
 :root {
 	--font: 'open sans';
@@ -10,7 +10,7 @@
 	--presentationAccentColor: hsl(46, 84%, 56%);
 }
 
-/* Fontes */
+/* Fonts */
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 
@@ -118,7 +118,7 @@ body {
 	padding: 3px 4px 3px 4px;
 }
 
-/*		Presentation Menu */
+/*			Presentation Menu */
 
 .presentation-menu {
 	background-color: var(--color2);
@@ -186,7 +186,9 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: end;
+	height: 100%;
+	margin-bottom: 30px;
 }
 
 .presentation-menu img {
@@ -211,7 +213,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	justify-content: center;
+	justify-content: start;
 }
 
 .presentation-menu li {
@@ -226,16 +228,30 @@ body {
 	box-sizing: border-box;
 	flex-grow: 1;
 	max-height: 50px;
-	margin: 2vh 0px;
+	margin: 1vh 0px;
 }
 
-.presentation-menu li:hover,
-.presentation-menu li:focus {
+.presentation button{
+    background: var(--color1);
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+}
+
+.presentation .projects-option-btn{
+	height: 100%;
+    width: 100%;
+}
+
+.presentation-menu li:hover{
 	background-color: var(--color1Tint);
 	cursor: pointer;
 }
 
-.presentation-menu li:active {
+.presentation-menu li:active 
+.presentation .projects-option-btn:active {
 	background-color: var(--color1);
 }
 
@@ -334,11 +350,6 @@ body {
 	border: 2px solid var(--presentationAccentColor);
 }
 
-.projects-arrow.open:hover,
-.projects-arrow.open:focus {
-	background: var(--color1Tint);
-}
-
 .projects-arrow.open:active {
 	background: var(--color1);
 }
@@ -363,6 +374,9 @@ body {
 	transform: translateX(100vw);
 }
 
+
+/*	Responsiveness */
+
 @media only screen and (min-width: 768px) {
 	.presentation-menu {
 		position: fixed;
@@ -378,7 +392,7 @@ body {
 	}
 	.presentation-menu li {
 		height: 40px;
-		margin: 12px 0px;
+		margin: 7px 0px;
 	}
 
 	.presentation-menu.closed {
@@ -412,8 +426,16 @@ body {
 		max-width: 600px;
 	}
 
+	.presentation-menu .header{
+		justify-content: center;
+	}
+
 	.options-div{
 		height: 100%;
+	}
+
+	.options-div>ul{
+		justify-content: center;
 	}
 
 	.projects-div.projects.open{
@@ -428,5 +450,16 @@ body {
 @media only screen and (orientation: landscape) and (max-height:511px) and (max-width:768px){
 	.presentation-menu{
 		max-width: 768px;
+	}
+}
+
+@media (any-hover: hover){
+	.presentation .projects-option-btn.hover,
+	.projects-arrow.hover{
+		background-color: var(--color1Tint);
+		cursor: pointer;
+	}
+	.projects-arrow.open:hover{
+		background: var(--color1Tint);
 	}
 }
