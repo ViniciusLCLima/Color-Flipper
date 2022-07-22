@@ -21,7 +21,7 @@ miniPictureDiv.addEventListener('mousedown', ()=>{
 
 presentationMsg.addEventListener('mousedown', ()=>{
 	miniPictureDiv.style.borderColor = CSS_VARIABLE_COLOR2;
-	presentationMsg.style.transition = '0s';
+	miniPictureDiv.style.transition = '0s';
 	setTimeout(()=>{
 		miniPictureDiv.removeAttribute('style');
 	}, 900)
