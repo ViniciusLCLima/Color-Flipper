@@ -1,7 +1,7 @@
 # Color-Flipper
 
 ## Description
-This is a web page that lets its user, if they want, clicking in one of two buttons, change its background color to one of their choice or a random.
+This is a web page that lets its user to, if they want, click one of two buttons to change its background color to one of their choice or to a random one.
 
 ## How to execute and use it on your computer.
 It can accessed in the link https://viniciusleitedocarmo.github.io/Color-Flipper/ through GitHub Pages.
