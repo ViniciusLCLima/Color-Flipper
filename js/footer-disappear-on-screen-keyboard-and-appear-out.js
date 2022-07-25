@@ -1,12 +1,12 @@
 const addIfItHasAndDelIfNotClassOnElement = (element, theClass)=>{
-    const hasClass = element.classList.contains('on-keyboard-appearance')
-    hasClass ? element.classList.add('on-keyboard-appearance') : element.classList.remove('on-keyboard-appearance');
+    const hasClass = element.classList.contains(theClass)
+    hasClass ? element.classList.remove(theClass) : element.classList.add(theClass);
 }
-const myFooterPresentation = document.querySelector('footer-presentation');
-const presentationSticker = document.querySelector('presentation-sticker');
+const myFooterPresentation = document.querySelector('.footer-presentation');
+const presentationSticker = document.querySelector('.presentation-sticker');
 
 window.addEventListener('resize', ()=>{
     const classToAddorDelOnKeyboardAppearance='on-keyboard-appearance'
-    addIfItHasAndDelIfNotClassOnElement(classToAddorDelOnKeyboardAppearance);
-    addIfItHasAndDelIfNotClassOnElement(classToAddorDelOnKeyboardAppearance);
+    addIfItHasAndDelIfNotClassOnElement(myFooterPresentation, classToAddorDelOnKeyboardAppearance);
+    addIfItHasAndDelIfNotClassOnElement(presentationSticker, classToAddorDelOnKeyboardAppearance);
 });
