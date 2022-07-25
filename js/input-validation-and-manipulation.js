@@ -159,7 +159,7 @@ const updatePositionHeightAndWidthOfInputDivs=()=>{
     setInputDivsHeight();
     setInputsDistanceFromRightEdge();
     const inputDivs = document.querySelectorAll('.number-input-div');
-    const widthOfInputs = getWantedWidthForInputDivs();
+    widthOfInputs = getWantedWidthForInputDivs();
     for (let i = 0; i<inputDivs.length; i++){
         const IS_INPUT_DIV_CLOSED = inputDivs[i].classList.contains('closed');
         IS_INPUT_DIV_CLOSED ? {} : setElementWidth(inputDivs[i], widthOfInputs);
