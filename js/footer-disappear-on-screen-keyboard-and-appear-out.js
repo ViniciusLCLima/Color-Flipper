@@ -6,7 +6,7 @@ const myFooterPresentation = document.querySelector('footer-presentation');
 const presentationSticker = document.querySelector('presentation-sticker');
 
 window.addEventListener('resize', ()=>{
-    classToAddorDelOnKeyboardAppearance='on-keyboard-appearance'
+    const classToAddorDelOnKeyboardAppearance='on-keyboard-appearance'
     addIfItHasAndDelIfNotClassOnElement(classToAddorDelOnKeyboardAppearance);
     addIfItHasAndDelIfNotClassOnElement(classToAddorDelOnKeyboardAppearance);
 });
