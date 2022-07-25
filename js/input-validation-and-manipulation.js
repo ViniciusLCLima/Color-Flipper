@@ -34,7 +34,7 @@ const displayThereYouGoMessage = () =>{
 
 const expandInput = (inputDiv) =>{
     inputDiv.classList.remove('closed');
-    setElementWidth(inputDiv,widthOfInputs);
+    setElementWidth(inputDiv, widthOfInputs);
 }
 
 const closeInputs = () =>{
@@ -101,7 +101,7 @@ const confirmLuminance = () => {
         luminanceNumberInput.value = '';
         closeInputs();
         changeColor(chosenColor);
-        setInputDivsHeight(choiceDivHeight);
+        setInputDivsHeight(choiceDiv.offsetHeight);
         removeSpansFromInputDivs();
         displayThereYouGoMessage();
         luminanceNumberInput.blur();
@@ -111,6 +111,7 @@ const confirmLuminance = () => {
 }
 
 //Getting elements
+const inputDivs = document.querySelectorAll('.number-input-div');
 const hueInputDiv = document.querySelector('.hue-input-div');
 const hueInputAndOkDiv = document.querySelector('.hue-input-div .input-and-ok-div');
 const hueNumberInput = document.getElementById('hueInput');
@@ -127,26 +128,47 @@ const choiceBtn = document.querySelector('.choice-btn');
 const choiceDiv = document.querySelector('.choice-btn-div');
 const btnsDiv = document.querySelector('.btns-div');
 
-// Getting choosing button distance from right and width of buttons to settle size of input divs when they open
-const choiceBtnDistanceFromRightEdge = window.innerWidth - choiceDiv.getBoundingClientRect().right;
-const choiceDivMargin = parseFloat(getComputedStyle(choiceDiv).marginRight);
-const choiceDivWidth = choiceDiv.offsetWidth;
-const choiceDivHeight = choiceDiv.offsetHeight;
-const widthOfInputs = (choiceDivWidth*2)+(choiceDivMargin*2);
-
-
-//positioning Input Divs
-setElementRightProperty(hueInputDiv, choiceBtnDistanceFromRightEdge);
-setElementRightProperty(saturationInputDiv, choiceBtnDistanceFromRightEdge);
-setElementRightProperty(luminanceInputDiv, choiceBtnDistanceFromRightEdge);
-
-//setting height of inputs
-const setInputDivsHeight= (height)=>{
-    setElementHeight(hueInputDiv, height);
-    setElementHeight(saturationInputDiv,height);
-    setElementHeight(luminanceInputDiv,height);
+const getWantedWidthForInputDivs=()=>{
+    const choiceDivWidth = choiceDiv.offsetWidth;
+    const choiceDivMargin = parseFloat(getComputedStyle(choiceDiv).marginRight);
+    return (choiceDivWidth*2)+(choiceDivMargin*2)
 }
-setInputDivsHeight(choiceDivHeight);
+
+var widthOfInputs = getWantedWidthForInputDivs();
+
+//Settle height of inputs
+const setInputDivsHeight= ()=>{
+    const choiceDivHeight = choiceDiv.offsetHeight;
+    setElementHeight(hueInputDiv, choiceDivHeight);
+    setElementHeight(saturationInputDiv,choiceDivHeight);
+    setElementHeight(luminanceInputDiv,choiceDivHeight);
+}
+const setInputsDistanceFromRightEdge= ()=>{
+    const choiceBtnDistanceFromRightEdge = window.innerWidth - choiceDiv.getBoundingClientRect().right;
+    setElementRightProperty(hueInputDiv, choiceBtnDistanceFromRightEdge);
+    setElementRightProperty(saturationInputDiv, choiceBtnDistanceFromRightEdge);
+    setElementRightProperty(luminanceInputDiv, choiceBtnDistanceFromRightEdge);
+}
+
+// Adjusting position and size of number input divs
+const updatePositionHeightAndWidthOfInputDivs=()=>{
+    // Getting choosing button distance from right and width of buttons
+    
+
+    //positioning Input Divs
+    setInputDivsHeight();
+    setInputsDistanceFromRightEdge();
+    const inputDivs = document.querySelectorAll('.number-input-div');
+    const widthOfInputs = getWantedWidthForInputDivs();
+    for (let i = 0; i<inputDivs.length; i++){
+        const IS_INPUT_DIV_CLOSED = inputDivs[i].classList.contains('closed');
+        IS_INPUT_DIV_CLOSED ? {} : setElementWidth(inputDivs[i], widthOfInputs);
+    }
+}
+
+updatePositionHeightAndWidthOfInputDivs();
+window.addEventListener('resize',updatePositionHeightAndWidthOfInputDivs);
+
 
 // setting routines for confirmation of inputs on click over ok button
 hueConfirmBtn.addEventListener('click', confirmHue);
@@ -162,7 +184,7 @@ choiceBtn.addEventListener('click', ()=>{
 // Invalid input routine
 const displayInvalidInputMessage = (inputAndOkDiv, input, minValue, maxValue) =>{
     input.style.borderColor = 'red';
-    const newInputDivHeight = choiceDivHeight + convertRemToPixels(1);
+    const newInputDivHeight = choiceDiv.offsetHeight + convertRemToPixels(1);
     setInputDivsHeight(newInputDivHeight);
     const HAS_MSG_ALREADY = inputAndOkDiv.textContent.includes('Please, enter');
     if (HAS_MSG_ALREADY){}else{

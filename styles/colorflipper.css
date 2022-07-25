@@ -137,6 +137,8 @@ section button {
 .number-input-div input{
 	margin-right: 8px;
     width: 3rem;
+	min-width: 35px;
+	min-height: 35px;
 }
 
 .number-input-div{
