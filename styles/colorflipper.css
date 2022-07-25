@@ -74,6 +74,7 @@ h2 {
 	padding: 15px 0px;
 	background-color: hsl(var(--contrastingColorHue),var(--contrastingColorSaturation),var(--contrastingColorLightness), 0.8);
 	color: var(--bgColor);
+	transition: 0.7s;
 }
 
 .main-div {
@@ -256,9 +257,13 @@ section {
 	box-shadow: 50px hsl(0, 0, var(--shadowLightness));
 }
 
-.on-keyboard-appearance{
+@media (pointer: coarse) and (max-height: 1300px){
+	.on-keyboard-appearance{
 		opacity: 0;
 		height: 0px;
 		padding: 0px;
+		margin: 0px;
 		transition: 0.7s 0.5s, opacity 0.7s;
+		overflow: hidden;
+	}
 }

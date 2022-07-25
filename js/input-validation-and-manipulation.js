@@ -104,6 +104,7 @@ const confirmLuminance = () => {
         setInputDivsHeight(choiceDivHeight);
         removeSpansFromInputDivs();
         displayThereYouGoMessage();
+        luminanceNumberInput.blur();
     }else{
         displayInvalidInputMessage(luminanceInputAndOkDiv,luminanceNumberInput, 0, 100);
     }

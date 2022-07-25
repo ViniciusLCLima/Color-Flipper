@@ -374,6 +374,10 @@ body {
 	transform: translateX(100vw);
 }
 
+.footer-presentation{
+	transition: 0.7s;
+}
+
 
 /*	Responsiveness */
 
