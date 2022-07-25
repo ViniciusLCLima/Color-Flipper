@@ -21,12 +21,12 @@
 /* Reset */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Overpass&family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&family=Permanent+Marker&display=swap');
 
 
 /* Basic Styles */
 *{
-	font-family: 'overpass', sans-serif;
+	font-family: 'Overpass', sans-serif;
 }
 
 section *,
@@ -254,4 +254,10 @@ section {
 	color: var(--contrastingColor);
 	opacity: 0;
 	box-shadow: 50px hsl(0, 0, var(--shadowLightness));
+}
+
+@media (any-pointer: none){
+	.on-keyboard-appearance{
+		opacity: 0;
+	}
 }

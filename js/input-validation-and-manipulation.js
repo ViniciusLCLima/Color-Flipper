@@ -1,6 +1,7 @@
 import { convertRemToPixels } from "./rem-to-pixels.js";
 import { setElementHeight, setElementWidth, setElementRightProperty } from "./set-element-styles.js";
 import { changeColor } from "./color-manipulation.js";
+import { addClassToElement } from "./myPresentation/handle-element-classes.js";
 
 const chosenColor = [] //For if user chooses to choose a color
 
