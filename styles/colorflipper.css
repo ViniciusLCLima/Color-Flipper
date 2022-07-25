@@ -256,11 +256,9 @@ section {
 	box-shadow: 50px hsl(0, 0, var(--shadowLightness));
 }
 
-@media (any-pointer:none){
-	.on-keyboard-appearance{
+.on-keyboard-appearance{
 		opacity: 0;
 		height: 0px;
 		padding: 0px;
 		transition: 0.7s 0.5s, opacity 0.7s;
-	}
 }
