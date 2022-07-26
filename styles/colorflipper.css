@@ -95,7 +95,7 @@ h2 {
 
 .main-btn-div{
 	flex: 1 1;
-	min-height: 60px;
+	min-height: 80px;
 	max-width: 200px;
 	margin: 0px 5%;
 	display: flex;
