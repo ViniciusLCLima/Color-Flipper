@@ -1,5 +1,5 @@
 # Color-Flipper
-**[Leia em português](#descrição)**
+**[Leia em português](#color-flipper-1)**
 
 ## Description
 This is a web page that lets its user click one of two buttons to change its background color to one of their choice or a random one.
