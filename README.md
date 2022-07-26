@@ -1,5 +1,5 @@
 # Color-Flipper
-**[Leia em português](https://github.com/ViniciusLeitedoCarmo/Color-Flipper#apresenta%C3%A7%C3%A3o-em-portugu%C3%AAs)**
+**[Leia em português](#apresenta%C3%A7%C3%A3o-em-portugu%C3%AAs)**
 
 ## English Presentation
 ### Description
